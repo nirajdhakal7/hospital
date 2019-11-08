@@ -5,7 +5,7 @@
 		<!-- Section: Contact v.1 -->
 		<section class="my-5">
 			<!-- Section heading -->
-			<h2 class="h1-responsive font-weight-bold text-center my-5">Coming Soon</h2>
+			<h2 class="h1-responsive font-weight-bold text-center my-5">Coming Soon!!! Stay With us</h2>
 			<!-- Section description -->
 			<p class="text-center w-responsive mx-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 				Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
