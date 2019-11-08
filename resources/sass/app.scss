@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7COpen+Sans:300,400,600");
+
+// Fonts
+@import "~@fortawesome/fontawesome-free/css/all";
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~mdbootstrap/scss/mdb';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
