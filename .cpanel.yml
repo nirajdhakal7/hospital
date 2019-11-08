@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/brcsocie/public_html/hospital
-    - /bin/cp index.php $DEPLOYPATH
+    - export DEPLOYPATH=/home/brcsocie/public_html/hospitaltest
+    - /bin/cp -r * $DEPLOYPATH
