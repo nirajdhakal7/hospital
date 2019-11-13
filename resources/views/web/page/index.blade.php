@@ -5,7 +5,7 @@
 	<div class="container-fluid">
 		<div class="row py-lg-4 ">
 			<div class="col-lg-12">
-				<h2>About Us</h2>
+				<h2>About Us 2</h2>
 				<div class="row ">
 					<div class=" col-lg-4 col-md-6 col-sm-12">
 						<img class="img-fluid " src="{{ asset('storage/'.$about->logo)}}" alt="No Image Found">
