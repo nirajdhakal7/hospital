@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/brcsocie/public_html/netrakoirala/moranghospital.tk
-    - /bin/cp * $DEPLOYPATH
+    - export DEPLOYPATH=/home/brcsocie/public_html/
+    - /bin/cp -R /home/brcsocie/repositories/hospital $DEPLOYPATH
