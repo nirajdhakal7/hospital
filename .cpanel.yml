@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/brcsocie/public_html/
+    - export DEPLOYPATH=/home/brcsocie/public_html/netrakoirala/hospital
     - /bin/cp -R /home/brcsocie/repositories/hospital $DEPLOYPATH
