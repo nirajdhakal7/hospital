@@ -1,23 +1,5 @@
 @extends('layouts.web')
 @section('title','Morang Hospital')
-@section('css')
-	<style>
-		.map-container {
-			overflow: hidden;
-			padding-bottom: 56.25%;
-			position: relative;
-			height: 0;
-		}
-		
-		.map-container iframe {
-			left: 0;
-			top: 0;
-			height: 100%;
-			width: 100%;
-			position: absolute;
-		}
-	</style>
-@endsection
 @section('content')
 	@include('components.carousel')
 	<div class="container-fluid">
@@ -68,17 +50,5 @@
 				</div>
 			</div>
 		</div>
-		<div class="row py-lg-4 ">
-			<div class="col">
-				<!--Google map-->
-				<div id="map-container" class="z-depth-1-half map-container">
-					<iframe src="https://maps.google.com/maps?q=morang%20hospital%20patharisanischare-1&t=&z=17&ie=UTF8&iwloc=&output=embed"
-					        frameborder="0"
-					        style="border:0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	
-	
 	</div>
 @endsection
