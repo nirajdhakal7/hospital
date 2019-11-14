@@ -15,7 +15,7 @@ class CarouselController extends Controller
      */
     public function index()
     {
-        $carousels = Carousel::all();
+        $carousels = Carousel::paginate(4);
         return view('admin.carousel.index', compact('carousels'));
     }
 

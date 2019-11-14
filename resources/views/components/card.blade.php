@@ -3,7 +3,7 @@
 		<img style="height: 10rem;" src="{{ asset('storage/'.$card->photo)}}" class="card-img-top" alt="No Image">
 		<div class="card-body">
 			<h5 class="card-name">{{$card->name}}</h5>
-			<p class="card-text">{{Str::limit($card->description, 10,'')}}</p>
+			<p class="card-text">{{ Str::limit($card->description, 10,'')}}</p>
 			<form method="POST" action="{{ route($route.'.destroy', [$route => $card->id]) }}">
 				@csrf
 				@method('DELETE')

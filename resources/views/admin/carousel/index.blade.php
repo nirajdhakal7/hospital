@@ -1,6 +1,8 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
 @section('title','Slider')
 @section('content')
+	
+	
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 		<h1 class="h2">Image Carousel</h1>
 		<div class="btn-toolbar mb-2 mb-md-0">
@@ -11,13 +13,15 @@
 		</div>
 	</div>
 	@isset($carousels)
-		<div class="container">
+		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 			@foreach($carousels as $card)
-				<div class="{{$loop->even?'row':'float-left'}}">
-					@include('components.card',['route'=>'carousel'])
-				</div>
+				@include('components.card',['route'=>'carousel'])
 			@endforeach
 		</div>
+		<div class="container">
+			{{ $carousels->links() }}
+		</div>
 	@endisset
+
 @endsection
 

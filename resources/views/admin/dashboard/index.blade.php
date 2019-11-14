@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
 @section('title','Dashboard')
 @section('content')
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -11,4 +11,4 @@
 		</div>
 	</div>
 	<p>You can customize UI from Admin Panel</p>
-@endsection
+@stop
