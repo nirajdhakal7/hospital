@@ -15,7 +15,7 @@
 			<table class="table table-striped table-sm">
 				<thead class="thead-dark">
 				<tr>
-					<th>#</th>
+					<th>No.</th>
 					<th>Title</th>
 					<th>Description</th>
 					<th>File</th>
