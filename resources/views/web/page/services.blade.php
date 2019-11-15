@@ -7,7 +7,7 @@
 			<!-- Section heading -->
 			<h2 class="h1-responsive font-weight-bold text-center my-5">Coming Soon !!!
 				<hr>
-				Stay With us
+				Stay With us :) 
 			</h2>
 			<!-- Section description -->
 			<p class="text-center w-responsive mx-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
