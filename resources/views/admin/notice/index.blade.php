@@ -32,7 +32,7 @@
 							<td><a href="{{ url( asset('storage/'.$notice->attachment))}}" target="_blank" >{{$notice->title}}</a></td>
 						@else
 							<td>
-								No File
+								No File Attached
 							</td>
 						@endisset
 						<td> {{$notice->created_at}}</td>
