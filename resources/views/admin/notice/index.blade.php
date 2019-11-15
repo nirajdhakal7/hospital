@@ -18,7 +18,7 @@
 					<th>No.</th>
 					<th>Title</th>
 					<th>Description</th>
-					<th>File</th>
+					<th>Attachment</th>
 					<th>Created Date</th>
 				</tr>
 				</thead>
