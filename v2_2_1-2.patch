@@ -1,0 +1,16 @@
+Index: resources/views/admin/notice/index.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- resources/views/admin/notice/index.blade.php	(date 1573782487000)
++++ resources/views/admin/notice/index.blade.php	(date 1573783767790)
+@@ -18,7 +18,7 @@
+ 					<th>No.</th>
+ 					<th>Title</th>
+ 					<th>Description</th>
+-					<th>File</th>
++					<th>Attachment</th>
+ 					<th>Created Date</th>
+ 				</tr>
+ 				</thead>
