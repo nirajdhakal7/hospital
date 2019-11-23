@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class DoctorController extends Controller
 {
@@ -133,15 +134,14 @@ class DoctorController extends Controller
             Storage::delete('public/' . $doctor->photo);
         }
     }
-
     private function storeImage($doctor)
     {
         if (request()->has('photo')) {
             $doctor->update([
                 'photo' => request()->photo->store('doctor', 'public'),
             ]);
-//            $image = Image::make(public_path('storage/' . $doctor->photo));
-//            $image->save();
+            $image = Image::make(public_path('storage/' . $doctor->photo))->fit(300,300);
+            $image->save();
         }
     }
 }

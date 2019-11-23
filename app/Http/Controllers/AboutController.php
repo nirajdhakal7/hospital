@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 /**
  */
@@ -134,8 +135,8 @@ class AboutController extends Controller
             $about->update([
                 'logo' => request()->logo->store('about', 'public'),
             ]);
-//            $image = Image::make(public_path('storage/' . $about->logo));
-//            $image->save();
+            $image = Image::make(public_path('storage/' . $about->logo))->fit(300, 300);
+            $image->save();
         }
     }
 }

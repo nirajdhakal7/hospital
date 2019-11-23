@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Carousel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class CarouselController extends Controller
 {
@@ -126,8 +127,8 @@ class CarouselController extends Controller
             $carousel->update([
                 'photo' => request()->photo->store('carousel', 'public'),
             ]);
-//            $image = Image::make(public_path('storage/' . $carousel->photo));
-//            $image->save();
+            $image = Image::make(public_path('storage/' . $carousel->photo))->fit(1920,1280);
+            $image->save();
         }
     }
 }

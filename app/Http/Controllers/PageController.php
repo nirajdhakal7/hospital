@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Carousel;
+use App\Notice;
 use App\Service;
 use App\Visitor;
 use App\Executive;
@@ -110,5 +111,10 @@ class PageController extends Controller
     {
         $services = Service::all();
         return view('web.page.services', compact('services'));
+    }
+    public function notice()
+    {
+        $notices = Notice::all();
+        return view('web.page.notices', compact('notices'));
     }
 }
