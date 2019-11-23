@@ -11,16 +11,17 @@
 |
 */
 
-Auth::routes(['verify' => true]);
 
-Route::get('/service', function () {
-    return view('web.page.services');
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', 'PageController@index');
+    Route::get('/contact', 'PageController@contact');
+    Route::get('/executive', 'PageController@executive');
+    Route::get('/service', 'PageController@service');
+    Route::get('/notice', 'PageController@notice');
 });
-Route::get('/contact', function () {
-    return view('web.page.contact');
-});
-Route::get('/', 'PageController@index');
-Route::group(['middleware' => [ 'verified']], function () {
+
+Auth::routes(['verify' => true]);
+Route::group(['middleware' => ['verified']], function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::resource('/', 'DashboardController');
         Route::resource('about', 'AboutController');

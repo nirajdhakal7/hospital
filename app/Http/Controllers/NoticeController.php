@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Notice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class NoticeController extends Controller
 {
@@ -14,7 +15,7 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        $notices = Notice::all();
+        $notices = Notice::orderBy('created_at', 'desc')->get();
         return view('admin.notice.index', compact('notices'));
     }
 
@@ -25,7 +26,7 @@ class NoticeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.notice.create');
     }
 
     /**
@@ -36,7 +37,9 @@ class NoticeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $notice = Notice::create($this->validateRequest());
+        $this->storeFile($notice);
+        return redirect('admin/notice');
     }
 
     /**
@@ -82,5 +85,25 @@ class NoticeController extends Controller
     public function destroy(Notice $notice)
     {
         //
+    }
+    private function validateRequest()
+    {
+        return request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'attachment' => 'sometimes|file|max:10000|mimes:doc,docx,pdf,jpeg,png,jpg,xls,xlsx',
+        ]);
+    }
+
+    private function storeFile($notice)
+    {
+        $filenameWithExt = request()->file('attachment')->getClientOriginalName();
+        if (Str::startsWith($filenameWithExt, '#')) {
+            $filenameWithExt = Str::after($filenameWithExt, '#');
+        }
+        $path = request()->file('attachment')->storeAs('public/attachment', $filenameWithExt);
+        $notice->update([
+            'attachment' => Str::after($path, 'public/'),
+        ]);
     }
 }

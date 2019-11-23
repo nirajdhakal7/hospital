@@ -191,22 +191,27 @@ return [
         [
             'text'        => 'Carousel',
             'url'         => 'admin/carousel',
+            'icon'        => 'fas fa-fw  fa-clone',
+        ],
+        [
+            'text'        => 'Doctor',
+            'url'         => 'admin/doctor',
+            'icon'        => 'fas fa-fw  fa-stethoscope'  ,
+        ],
+        [
+            'text'        => 'Executive',
+            'url'         => 'admin/executive',
+            'icon'        => 'fas fa-fw fa-user-md',
+        ],
+        [
+            'text'        => 'Notice',
+            'url'         => 'admin/notice',
+            'icon'        => 'fa fa-fw  fa-list-alt',
+        ],
+        [
+            'text'        => 'Service',
+            'url'         => 'admin/service',
             'icon'        => 'fas fa-fw fa-cubes',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-        ],
-        [
-            'text'        => 'Users',
-            'url'         => 'admin/user',
-            'icon'        => 'fas fa-fw fa-users',
         ],
         ['header' => 'account_settings'],
         [
@@ -220,55 +225,9 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
+            'text'        => 'Users',
+            'url'         => 'admin/user',
+            'icon'        => 'fas fa-fw fa-users',
         ],
     ],
 

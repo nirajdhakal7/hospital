@@ -27,25 +27,20 @@
 							@if( url()->full()===url('/service'))
 								<span class="sr-only">(current)</span>
 							@endif
-						
 						</a>
 						<a class="dropdown-item" href="{{ url('/service') }}">
 							Our Services
 							@if( url()->full()===url('/service'))
 								<span class="sr-only">(current)</span>
 							@endif
-						
 						</a>
-						<a class="dropdown-item " href="{{ url('/service') }}">
+						<a class="dropdown-item " href="{{ url('/executive') }}">
 							Our Executive Team
-							@if( url()->full()===url('/service'))
+							@if( url()->full()===url('/executive'))
 								<span class="sr-only">(current)</span>
 							@endif
-						
 						</a>
 					</div>
-				
-				
 				</li>
 				<li class="nav-item {{ url()->full()===url('/notice')?'active':''}}">
 					<a class="nav-link" href="{{ url('/notice') }}">
@@ -55,7 +50,6 @@
 						@endif
 					</a>
 				</li>
-				
 				<li class="nav-item {{ url()->full()===url('/contact')?'active':''}}">
 					<a class="nav-link" href="{{ url('/contact') }}">
 						Contact Us
