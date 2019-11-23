@@ -1,6 +1,7 @@
 @extends('adminlte::master')
 
 @section('adminlte_css')
+    <link rel="stylesheet" href="{{asset('css/cards/flipping-card.css')}}">
     @stack('css')
     @yield('css')
 @stop

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'MorangHospital 3',
+    'title' => 'AdminLTE 3',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -30,12 +30,12 @@ return [
     |
     */
 
-    'logo' => '<b>Morang</b>Hospital',
+    'logo' => '<b>Admin</b>LTE',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'MorangHospital',
+    'logo_img_alt' => 'AdminLTE',
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +98,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 200,
+    'sidebar_nav_animation_speed' => 300,
 
     /*
     |--------------------------------------------------------------------------
@@ -184,34 +184,11 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'About',
-            'url'         => 'admin/about',
-            'icon'        => 'fas fa-fw fa-info',
-        ],
-        [
-            'text'        => 'Carousel',
-            'url'         => 'admin/carousel',
-            'icon'        => 'fas fa-fw  fa-clone',
-        ],
-        [
-            'text'        => 'Doctor',
-            'url'         => 'admin/doctor',
-            'icon'        => 'fas fa-fw  fa-stethoscope'  ,
-        ],
-        [
-            'text'        => 'Executive',
-            'url'         => 'admin/executive',
-            'icon'        => 'fas fa-fw fa-user-md',
-        ],
-        [
-            'text'        => 'Notice',
-            'url'         => 'admin/notice',
-            'icon'        => 'fa fa-fw  fa-list-alt',
-        ],
-        [
-            'text'        => 'Service',
-            'url'         => 'admin/service',
-            'icon'        => 'fas fa-fw fa-cubes',
+            'text'        => 'pages',
+            'url'         => 'admin/pages',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 4,
+            'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
@@ -225,9 +202,55 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'        => 'Users',
-            'url'         => 'admin/user',
-            'icon'        => 'fas fa-fw fa-users',
+            'text'    => 'multilevel',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        ['header' => 'labels'],
+        [
+            'text'       => 'important',
+            'icon_color' => 'red',
+        ],
+        [
+            'text'       => 'warning',
+            'icon_color' => 'yellow',
+        ],
+        [
+            'text'       => 'information',
+            'icon_color' => 'aqua',
         ],
     ],
 
