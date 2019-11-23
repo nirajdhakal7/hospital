@@ -4,6 +4,17 @@
 	<link rel="stylesheet" href="{{ asset('vendor/datatables/css/dataTables.bootstrap4.css')}}"/>
 @endsection
 @section('content')
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h2 class="h2">Add Notice</h2>
+		<div class="btn-toolbar mb-2 mb-md-0">
+			<div class="btn-group mr-2">
+				<a href="{{ route('notice.create')}}" class="btn btn-sm btn-outline-secondary">Add</a>
+				<button type="button" class="btn btn-sm btn-outline-secondary">Reset</button>
+			</div>
+		</div>
+	</div>
+	
+	
 	@isset($notices)
 		<div class="card">
 			<div class="card-header">
@@ -35,7 +46,7 @@
 									No File Attached
 								</td>
 							@endisset
-							<td> {{$notice->created_at}}</td>
+							<td> {{ date_format($notice->created_at, 'jS M, Y')	}}</td>
 						</tr>
 					@endforeach
 				</table>

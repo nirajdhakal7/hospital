@@ -114,7 +114,7 @@ class PageController extends Controller
     }
     public function notice()
     {
-        $notices = Notice::all();
+        $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
         return view('web.page.notices', compact('notices'));
     }
 }
