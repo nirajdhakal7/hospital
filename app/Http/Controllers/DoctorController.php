@@ -26,13 +26,14 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.doctor.create');
+        $doctor = new Doctor();
+        return view('admin.doctor.create', compact('doctor'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +46,7 @@ class DoctorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Doctor  $doctor
+     * @param \App\Doctor $doctor
      * @return \Illuminate\Http\Response
      */
     public function show(Doctor $doctor)
@@ -56,7 +57,7 @@ class DoctorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Doctor  $doctor
+     * @param \App\Doctor $doctor
      * @return \Illuminate\Http\Response
      */
     public function edit(Doctor $doctor)
@@ -68,8 +69,8 @@ class DoctorController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Doctor  $doctor
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Doctor $doctor
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Doctor $doctor)
@@ -84,7 +85,7 @@ class DoctorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Doctor  $doctor
+     * @param \App\Doctor $doctor
      * @return \Illuminate\Http\Response
      */
     public function destroy(Doctor $doctor)
@@ -98,7 +99,7 @@ class DoctorController extends Controller
     {
         return request()->validate([
             'name' => 'required',
-            'registrationNo'=>'required|numeric',
+            'registrationNo' => 'required|numeric',
             'photo' => 'required|file|image|max:5000',
             'qualification' => 'required',
             'specialities' => 'required',
@@ -114,7 +115,7 @@ class DoctorController extends Controller
     {
         return request()->validate([
             'name' => 'required',
-            'registrationNo'=>'required|numeric',
+            'registrationNo' => 'required|numeric',
             'photo' => 'sometimes|file|image|max:5000',
             'qualification' => 'required',
             'specialities' => 'required',

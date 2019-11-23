@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 /**
-
  */
 class AboutController extends Controller
 {
@@ -108,6 +107,7 @@ class AboutController extends Controller
             'logo' => 'sometimes|file|image|max:5000',
         ]);
     }
+
     private function validateRequestUpdate()
     {
         return request()->validate([
@@ -120,6 +120,7 @@ class AboutController extends Controller
             'logo' => 'sometimes|file|image|max:5000',
         ]);
     }
+
     private function checkAndDeleteOldLogo($about)
     {
         if (request()->has('logo')) {

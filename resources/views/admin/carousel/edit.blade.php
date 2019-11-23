@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
 @section('title','Edit Carousel')
 @section('content')
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -18,7 +18,8 @@
 			</button>
 		</div>
 	@endif
-	<form action="{{route('carousel.update', ['carousel'=>$carousel->id]) }}" method="POST" enctype="multipart/form-data">
+	<form action="{{route('carousel.update', ['carousel'=>$carousel->id]) }}" method="POST"
+	      enctype="multipart/form-data">
 		@csrf
 		<div class="form-row">
 			<div class="form-group col-md-12">
@@ -50,7 +51,7 @@
 			<div class="form-group col-md-12">
 				<div class="custom-file">
 					<input type="file" class="custom-file-input {{ $errors->first('photo')?'is-invalid':''}}"
-					        name="photo"
+					       name="photo"
 					       id="validatedCustomFile">
 					<label class="custom-file-label"
 					       for="validatedCustomFile">Choose file...</label>

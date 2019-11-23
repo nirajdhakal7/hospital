@@ -10,17 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'PageController@index');
+Route::get('/executive', 'PageController@executive');
+Route::get('/contact', 'PageController@contact');
+Route::get('/service', 'PageController@service');
 
 Auth::routes(['verify' => true]);
-
-Route::get('/service', function () {
-    return view('web.page.services');
-});
-Route::get('/contact', function () {
-    return view('web.page.contact');
-});
-Route::get('/', 'PageController@index');
-Route::group(['middleware' => [ 'verified']], function () {
+Route::group(['middleware' => ['verified']], function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::resource('/', 'DashboardController');
         Route::resource('about', 'AboutController');

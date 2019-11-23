@@ -6,6 +6,7 @@ use App\About;
 use App\Carousel;
 use App\Service;
 use App\Visitor;
+use App\Executive;
 use App\VisitorChecker;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -91,5 +92,23 @@ class PageController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function executive()
+    {
+        $executives = Executive::all();
+        // dd($executives);
+        return view('web.page.executives', compact('executives'));
+    }
+
+
+    public function contact()
+    {
+        return view('web.page.contact');
+    }
+    public function service()
+    {
+        $services = Service::all();
+        return view('web.page.services', compact('services'));
     }
 }
