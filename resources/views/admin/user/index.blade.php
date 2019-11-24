@@ -106,7 +106,34 @@
 								</div>
 							</div>
 						</div>
-						<!-- Verification Confirmation Modal -->
+					
+						<!-- Suspend Confirmation Modal -->
+						<div class="modal fade" id="suspend{{$loop->iteration}}" tabindex="-1" role="dialog"
+						     aria-labelledby="myModalLabel"
+						     aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header text-center">
+										<h4 class="modal-title w-100 font-weight-bold">Confirm Suspension</h4>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body mx-3">
+										Are you sure you want to suspend this account?
+									</div>
+									<div class="modal-footer d-flex justify-content-center">
+										<form method="POST"
+										      action="{{ route('user.suspend', ['user' => $user->id]) }}">
+											@csrf
+											@method('patch')
+											<button class="btn btn-outline-primary">Suspend</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					
 						<!-- Delete Confirmation Modal -->
 						<div class="modal fade" id="delete{{$loop->iteration}}" tabindex="-1" role="dialog"
 						     aria-labelledby="myModalLabel"

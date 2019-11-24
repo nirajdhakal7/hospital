@@ -81,6 +81,15 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::find($user->id)->delete();
+        return redirect(route('user.index'));
     }
+
+    public function suspend(User $user){
+        User::find($user->id)->update(['email_verified_at' => null]);
+        return redirect(route('user.index'));
+
+    }
+
+
 }

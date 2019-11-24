@@ -32,6 +32,7 @@ Route::group(['middleware' => ['verified']], function () {
         Route::resource('service', 'ServiceController');
         Route::resource('carousel', 'CarouselController');
         Route::resource('user', 'UserController');
+        Route::patch('/user/{user}', 'UserController@suspend')->name('user.suspend');
         Route::patch('/verify/{user}', 'Auth\AdminVerificationController@update')->name('admin.verify');
     });
 });
