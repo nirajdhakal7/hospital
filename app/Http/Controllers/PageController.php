@@ -23,9 +23,9 @@ class PageController extends Controller
     {
         Visitor::checkVisitor();
         $visitors = Visitor::get();
-        $carousels = Carousel::all();
+        $carousels = Carousel::orderBy('created_at','desc')->get();
         $about = About::first();
-        $services = Service::take(4)->get();
+        $services = Service::orderBy('created_at','desc')->take(4)->get();
         return view('web.page.index', compact('carousels', 'about', 'services', 'visitors'));
     }
 

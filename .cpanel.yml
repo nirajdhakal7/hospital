@@ -3,3 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/brcsocie/public_html/netrakoirala/hospital
     - /bin/cp -r * $DEPLOYPATH
+    - /bin/cp -r /home/brcsocie/repositories/hospital/public/css /home/brcsocie/public_html/netrakoirala
+    - /bin/cp -r /home/brcsocie/repositories/hospital/public/fonts /home/brcsocie/public_html/netrakoirala
+    - /bin/cp -r /home/brcsocie/repositories/hospital/public/js /home/brcsocie/public_html/netrakoirala
+    - /bin/cp -r /home/brcsocie/repositories/hospital/public/vendor /home/brcsocie/public_html/netrakoirala
