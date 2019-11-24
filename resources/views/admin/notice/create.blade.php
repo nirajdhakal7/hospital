@@ -5,7 +5,7 @@
 		<h2 class="h2">Add Notice</h2>
 		<div class="btn-toolbar mb-2 mb-md-0">
 			<div class="btn-group mr-2">
-				<a href="{{ route('slider.create')}}" class="btn btn-sm btn-outline-secondary">Back</a>
+				<a href="{{ url('/admin')}}" class="btn btn-sm btn-outline-secondary">Back</a>
 				<button type="button" class="btn btn-sm btn-outline-secondary">Reset</button>
 			</div>
 		</div>

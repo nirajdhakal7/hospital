@@ -19,10 +19,10 @@
 							     alt="{{ $loop->index }}">
 							<div class="mask rgba-black-slight"></div>
 						</div>
-						<div class="carousel-caption">
-							<h3 class="h3-responsive">Slight mask</h3>
-							<p>Third text</p>
-						</div>
+						{{--						<div class="carousel-caption">--}}
+						{{--							<h3 class="h3-responsive">Slight mask</h3>--}}
+						{{--							<p>Third text</p>--}}
+						{{--						</div>--}}
 					</div>
 				@endforeach
 			</div>

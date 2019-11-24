@@ -17,6 +17,7 @@ class ExecutiveController extends Controller
     {
         $executives = Executive::paginate(4);
         return view('admin.executive.index', compact('executives'));
+
     }
 
     /**
@@ -26,13 +27,14 @@ class ExecutiveController extends Controller
      */
     public function create()
     {
-        return view('admin.executive.create');
+        $executive = new Executive();
+        return view('admin.executive.create', compact('executive'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +47,7 @@ class ExecutiveController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Executive  $executive
+     * @param \App\Executive $executive
      * @return \Illuminate\Http\Response
      */
     public function show(Executive $executive)
@@ -56,7 +58,7 @@ class ExecutiveController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Executive  $executive
+     * @param \App\Executive $executive
      * @return \Illuminate\Http\Response
      */
     public function edit(Executive $executive)
@@ -68,8 +70,8 @@ class ExecutiveController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Executive  $executive
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Executive $executive
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Executive $executive)
@@ -84,7 +86,7 @@ class ExecutiveController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Executive  $executive
+     * @param \App\Executive $executive
      * @return \Illuminate\Http\Response
      */
     public function destroy(Executive $executive)
@@ -95,19 +97,23 @@ class ExecutiveController extends Controller
     }
 
 
-    private function validateRequestUpdate()
+    private function validateRequest()
     {
         return request()->validate([
             'name' => 'required',
-            'registrationNo'=>'required|numeric',
+            'photo' => 'required|file|image|max:5000',
+            'post' => 'required',
+            'message' => 'nullable',
+        ]);
+    }
+
+    private function validateRequestUpdate()
+    {
+        return request()->validate([
             'photo' => 'sometimes|file|image|max:5000',
-            'qualification' => 'required',
-            'specialities' => 'required',
-            'department' => 'required',
-            'message' => 'required',
-            'description' => 'required',
-            'arrival' => 'nullable',
-            'isDialy' => 'nullable|boolean',
+            'name' => 'required',
+            'post' => 'required',
+            'message' => 'nullable',
         ]);
     }
 
@@ -128,4 +134,5 @@ class ExecutiveController extends Controller
 //            $image->save();
         }
     }
+
 }

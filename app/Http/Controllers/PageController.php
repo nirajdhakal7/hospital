@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Carousel;
+use App\Notice;
 use App\Service;
 use App\Visitor;
+use App\Executive;
 use App\VisitorChecker;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -21,9 +23,9 @@ class PageController extends Controller
     {
         Visitor::checkVisitor();
         $visitors = Visitor::get();
-        $carousels = Carousel::all();
+        $carousels = Carousel::orderBy('created_at','desc')->get();
         $about = About::first();
-        $services = Service::take(4)->get();
+        $services = Service::orderBy('created_at','desc')->take(4)->get();
         return view('web.page.index', compact('carousels', 'about', 'services', 'visitors'));
     }
 
@@ -91,5 +93,28 @@ class PageController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function executive()
+    {
+        $executives = Executive::all();
+        // dd($executives);
+        return view('web.page.executives', compact('executives'));
+    }
+
+
+    public function contact()
+    {
+        return view('web.page.contact');
+    }
+    public function service()
+    {
+        $services = Service::all();
+        return view('web.page.services', compact('services'));
+    }
+    public function notice()
+    {
+        $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
+        return view('web.page.notices', compact('notices'));
     }
 }

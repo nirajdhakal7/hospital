@@ -36,24 +36,20 @@
 						     {{--						     src="https://adminlte.io/themes/dev/AdminLTE/dist/img/user4-128x128.jpg"--}}
 						     alt="User profile picture">
 					</div>
-					
 					<h3 class="profile-username text-center">{{ $about->name }}</h3>
-					
 					<p class="text-muted text-center">{{ $about->slogan }}</p>
-					
 					<ul class="list-group list-group-unbordered mb-3">
 						<li class="list-group-item">
-							<b>Employees</b> <a class="float-right">1,322</a>
+							<b>Doctors</b> <a class="float-right">{{ \App\Doctor::all()->count() }}</a>
 						</li>
 						<li class="list-group-item">
-							<b>Doctors</b> <a class="float-right">543</a>
+							<b>Users</b> <a class="float-right">{{ \App\User::all()->count() }}</a>
 						</li>
 						<li class="list-group-item">
-							<b>Wards</b> <a class="float-right">13,287</a>
+							<b>Visitors</b> <a class="float-right">{{ \App\Visitor::get()}}</a>
 						</li>
 					</ul>
-					
-					<a href="#" class="btn btn-primary btn-block"><b>See More</b></a>
+					<a href={{ route('about.edit',[$about->id]) }} class="btn btn-primary btn-block"><b>Edit Details </b></a>
 				</div>
 				<!-- /.card-body -->
 			</div>
