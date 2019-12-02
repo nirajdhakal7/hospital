@@ -10,14 +10,14 @@
 			</div>
 		</div>
 	</div>
-	
+
 	@isset($executives)
 		@if ( count($executives)>  0)
 			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-				@foreach($executives as $card)
-					@include('components.card',['route'=>'executive'])
-				@endforeach
-			</div>
+            @foreach($executives as $card)
+            @include('components.card',['route'=>'executive'])
+            @endforeach
+            </div>
 			<div class="container">
 				{{ $executives->links() }}
 			</div>

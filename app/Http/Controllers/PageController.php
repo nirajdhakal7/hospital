@@ -96,10 +96,24 @@ class PageController extends Controller
     }
 
     public function executive()
+{
+    $executives = Executive::all();
+    // dd($executives);
+    return view('web.page.executives', compact('executives'));
+}
+
+    public function service()
     {
-        $executives = Executive::all();
+        $services = Service::all();
         // dd($executives);
-        return view('web.page.executives', compact('executives'));
+        return view('web.page.services', compact('services'));
+    }
+
+    public function about()
+    {
+        $about = About::latest()->take(1)->get();
+        // dd($executives);
+        return view('web.page.about', compact('about'));
     }
 
 
@@ -107,11 +121,11 @@ class PageController extends Controller
     {
         return view('web.page.contact');
     }
-    public function service()
-    {
-        $services = Service::all();
-        return view('web.page.services', compact('services'));
-    }
+//    public function service()
+//    {
+//        $services = Service::all();
+//        return view('web.page.services', compact('services'));
+//    }
     public function notice()
     {
         $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
