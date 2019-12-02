@@ -22,9 +22,9 @@
 						About Us
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="{{ url('/service') }}">
+						<a class="dropdown-item" href="{{ url('/about') }}">
 							What We Do?
-							@if( url()->full()===url('/service'))
+							@if( url()->full()===url('/about'))
 								<span class="sr-only">(current)</span>
 							@endif
 						</a>

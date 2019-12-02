@@ -13,11 +13,14 @@
 
 
 Route::group(['prefix' => '/'], function () {
+
     Route::get('/', 'PageController@index');
+    Route::get('/about', 'PageController@about');
     Route::get('/contact', 'PageController@contact');
     Route::get('/executive', 'PageController@executive');
     Route::get('/service', 'PageController@service');
     Route::get('/notice', 'PageController@notice');
+
 });
 
 Auth::routes(['verify' => true]);

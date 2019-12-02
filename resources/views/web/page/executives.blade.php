@@ -1,7 +1,7 @@
 @extends('layouts.web')
-@section('title','Our Services')
+@section('title','Executive Board')
 @section('content')
-	
+
 	<div class="container">
 		<h2 class="text-center mt-4">Executive Team</h2><!-- Grid row -->
 		<div class="row">
