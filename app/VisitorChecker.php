@@ -12,10 +12,12 @@ class VisitorChecker
 
     public  function checkVisitor()
     {
-
         $visitor = View::where(['remote_ip'=>$this->get_remote_ip(), 'user_agent'=>$this->get_user_agent()])->get();
         if($visitor->isEmpty()){
             $this->storeVisitor();
+            return true;
+        } else{
+            return false;
         }
     }
 

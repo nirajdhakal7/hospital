@@ -15,9 +15,9 @@
 <!-- Local Styles-->
 	<link rel="stylesheet" href="{{ asset('css/app.css')}}">
 </head>
-<body class="mx-auto">
+<body class="h-auto mx-auto">
 @include('partials.nav')
-<main class="mh-container ">
+<main class="mh-container">
 	@yield('content')
 </main>
 @include('partials.footer')

@@ -5,7 +5,11 @@
         <h1 class="h2">Doctors</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <a href="{{ route('doctor.create')}}" class="btn btn-sm btn-outline-secondary">Add Doctor</a>
+                @can('create', App\Doctor::class)
+                <a href="{{ route('doctor.create')}}" class="btn btn-sm btn-outline-secondary">
+                        Add Doctor
+                </a>
+                @endcan
                 <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
             </div>
         </div>

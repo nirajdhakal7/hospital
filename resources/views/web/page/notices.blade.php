@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('title','Our Services')
 @section('content')
-	<div class="container-fluid mt-5">
+	<div class="container-fluid" style="min-height: 560px; margin-top: 20px">
 		<h4 class="display-4">All Notices</h4>
 		<div class="row">
 			<div class="col-sm-4 col-xl-3">

@@ -6,7 +6,7 @@
 		<h2 class="text-center mt-4">Executive Team</h2><!-- Grid row -->
 		<div class="row">
 			@foreach ($executives as $row)
-				<div class="col-lg-4 col-md-6 colsm-6">
+				<div class="col-lg-4 col-md-6 col-sm-6">
 					<div class="card" style="width: 18rem;">
 						<img class="card-img-top" src="{{ asset('storage/'.$row->photo)}}" alt="Card image cap">
 						<div class="card-body">

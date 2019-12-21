@@ -2,7 +2,13 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
+.mh-main {
+  width: 100%;
+  padding-top: 3.25rem;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
 .mh-container {
   width: 100%;
   padding-top: 3.25rem;
@@ -10,7 +16,19 @@
   margin-right: auto;
   margin-left: auto;
 }
+.mh-content{
+  height: available;
 
+}
+.mh-footer{
+  background-color: orange;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow:hidden;
+}
 .map-container-section {
   overflow: hidden;
   padding-bottom: 56.25%;

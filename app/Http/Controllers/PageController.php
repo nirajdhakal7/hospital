@@ -21,11 +21,11 @@ class PageController extends Controller
      */
     public function index()
     {
-        Visitor::checkVisitor();
+        dd(Visitor::checkVisitor());
         $visitors = Visitor::get();
-        $carousels = Carousel::orderBy('created_at','desc')->get();
+        $carousels = Carousel::latest()->get();
         $about = About::first();
-        $services = Service::orderBy('created_at','desc')->take(4)->get();
+        $services = Service::latest()->take(4)->get();
         return view('web.page.index', compact('carousels', 'about', 'services', 'visitors'));
     }
 

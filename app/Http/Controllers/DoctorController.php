@@ -39,6 +39,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Doctor::class);
         $doctor = Doctor::create($this->validateRequest());
         $this->storeImage($doctor);
         return redirect('admin/doctor');
