@@ -26,7 +26,8 @@ class NoticeController extends Controller
      */
     public function create()
     {
-        return view('admin.notice.create');
+        $notice =new Notice();
+        return view('admin.notice.create',compact('notice'));
     }
 
     /**
@@ -61,7 +62,7 @@ class NoticeController extends Controller
      */
     public function edit(Notice $notice)
     {
-        //
+        return view('admin.notice.edit',compact('notice'));
     }
 
     /**
@@ -73,7 +74,11 @@ class NoticeController extends Controller
      */
     public function update(Request $request, Notice $notice)
     {
-        //
+        $this->validateRequestUpdate();
+        $this->checkAndDeleteOldLogo($notice);
+        $notice->update();
+        $this->storeLogo($notice);
+        return redirect(route('notice.index'));
     }
 
     /**

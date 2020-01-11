@@ -213,9 +213,29 @@
 	@stack('js')
 	@yield('js')
 	<script src="{{ asset('vendor/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+	<script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
 	<script>
         $(document).ready(function () {
             bsCustomFileInput.init();
         });
+        $(function () {
+            // Summernote
+            $('.textarea').summernote({
+                    height: 300,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: true,                // set focus to editable area after initializing summernote
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
+                }
+            )
+        })
 	</script>
 @stop

@@ -1,4 +1,9 @@
+@isset($method)
 <form action="{{ route($route.'.update',[$route=>$doctor->id]) }}" method="POST" enctype="multipart/form-data">
+	@else
+<form action="{{ route($route.'.create',[$route=>$doctor->id]) }}" method="POST" enctype="multipart/form-data">
+	@endisset
+	
 	@csrf
 	{{-- Name--}}
 	<div class="form-row">
@@ -79,9 +84,10 @@
 	<div class="form-row">
 		<div class="form-group col-md-12">
 			<label for="inputCaption">Message</label>
-			<input type="text" class="form-control {{ $errors->first('message')?'is-invalid':'' }}"
-			       value="{{ old('message')??$doctor->message}}" name="message" id="inputCaption"
-			       placeholder="Message">
+			<textarea class="textarea form-control {{ $errors->first('message')?'is-invalid':'' }}"
+			          name="message" id="inputCaption" placeholder="Message" >
+				{{ old('message')??$doctor->message??"Type your<b><u> Message here</b></u>"}}
+			</textarea>
 			@if($errors->first('message'))
 				<div class="invalid-feedback">
 					{{$errors->first('message')}}

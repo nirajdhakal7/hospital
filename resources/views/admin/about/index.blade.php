@@ -68,7 +68,7 @@
 					<strong><i class="fas fa-book mr-1"></i>Description</strong>
 					<label for="description"></label><textarea id="description" name="description"
 					                                           hidden>{{$about->description}}</textarea>
-					<p id="myP" class="text-muted" name="description">{{ $about->description }}
+					<p id="myP" class="text-muted" name="description">{!!  $about->description !!}
 					</p>
 					<hr>
 					<strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>

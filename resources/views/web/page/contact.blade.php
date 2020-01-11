@@ -1,15 +1,13 @@
 @extends('layouts.web')
 @section('title','Contact Us')
 @section('content')
-	<div class="container">
+	<div class="container" >
 		<!-- Section: Contact v.1 -->
-		<section class="my-5">
+		<div class="my-5">
 			<!-- Section heading -->
-			<h2 class="h1-responsive font-weight-bold text-center my-5">Contact us</h2>
+			<h2 class="h1-responsive font-weight-bold text-center">Contact us</h2>
 			<!-- Section description -->
-			<p class="text-center w-responsive mx-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
-				eum porro a pariatur veniam.</p>
+			<p class="text-center w-responsive mx-auto pb-5"></p>
 			<!-- Grid row -->
 			<div class="row">
 				<!-- Grid column -->
@@ -81,14 +79,14 @@
 								<i class="fas fa-envelope"></i>
 							</a>
 							<p>moranghospitalpvtltd@gmail.com</p>
-							<p class="mb-0">info@moranghospital.tk</p>
+							<p class="mb-0">info@moranghospital.com</p>
 						</div>
 					</div>
 				</div>
 				<!-- Grid column -->
 			</div>
 			<!-- Grid row -->
-		</section>
+		</div>
 		<!-- Section: Contact v.1 -->
 	</div>
 @endsection

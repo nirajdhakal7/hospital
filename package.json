@@ -26,10 +26,11 @@
         "@fortawesome/fontawesome-free": "^5.11.2",
         "@jkryszto/mdb-for-laravel": "^1.0.0",
         "bootstrap": "^4.3.1",
-      "datatables.net-bs4": "^1.10.20",
-      "icheck-bootstrap": "^3.0.1",
+        "ckeditor4": "^4.13.1",
+        "datatables.net-bs4": "^1.10.20",
+        "icheck-bootstrap": "^3.0.1",
         "node-waves": "^0.7.6",
-      "overlayscrollbars": "^1.10.0",
+        "overlayscrollbars": "^1.10.0",
         "popper": "^1.0.1",
         "popper.js": "^1.16.0"
     }
