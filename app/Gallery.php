@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     protected $guarded = [];
-    public function image()
+
+
+
+    public function images()
     {
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->morphMany(Image::class, 'imageable');
     }
 }

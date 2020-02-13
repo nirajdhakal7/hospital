@@ -4,7 +4,7 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
     require('bootstrap');
-    require('mdbootstrap');
+    // require('mdbootstrap');
     require('overlayscrollbars');
     require('datatables.net-bs4');
     require('../../vendor/almasaeed2010/adminlte/dist/js/adminlte');

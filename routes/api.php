@@ -26,3 +26,6 @@ Route::get('/doctors', function () {
 });
 
 
+Route::post('/{gallery}/image', 'AlbumController@store');
+
+

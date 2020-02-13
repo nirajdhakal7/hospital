@@ -7,20 +7,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
-class GalleryController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-
-        $galleries = Gallery::all();
-        return view('admin.gallery.index',compact('galleries'));
+        //
     }
 
     /**
@@ -28,9 +26,9 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Gallery $gallery)
+    public function create()
     {
-        return view('admin.gallery.create',compact('gallery'));
+        //
     }
 
     /**
@@ -39,9 +37,12 @@ class GalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Gallery $gallery)
     {
-//
+        $images = Collection::wrap(request()->file('file'));
+        foreach ($images as $image){
+            $gallery->images()->create(['url'=>$image->store('gallery/'.Str::slug($gallery->album, '-'), 'public')]);
+        }
     }
 
     /**
@@ -52,8 +53,7 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-
-        return view('admin.gallery.image',compact('gallery'));
+        //
     }
 
     /**
@@ -85,18 +85,9 @@ class GalleryController extends Controller
      * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(Gallery $gallery, $image)
     {
-        //
-    }
-
-    public function imageStore(Gallery $gallery){
-
-        $images = Collection::wrap(request()->file('file'));
-        foreach ($images as $image){
-            $gallery->images()->create(['url'=>$image->store('gallery/'.Str::slug($gallery->album, '-'), 'public')]);
-        }
-
-
+        $gallery->images()->where('id', $image)->delete();
+        return redirect()->back();
     }
 }
