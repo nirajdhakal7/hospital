@@ -29,6 +29,7 @@ class AboutController extends Controller
      */
     public function create()
     {
+        $about = new About();
         return view('admin.about.create');
     }
 
@@ -64,7 +65,8 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        $about = About::first();
+        return view('admin.about.edit', compact('about'));
     }
 
     /**
@@ -78,7 +80,7 @@ class AboutController extends Controller
     {
         $this->validateRequestUpdate();
         $this->checkAndDeleteOldLogo($about);
-        $about->update();
+        $about->update($this->validateRequestUpdate());
         $this->storeLogo($about);
         return redirect(route('service.index'));
     }

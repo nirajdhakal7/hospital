@@ -204,6 +204,11 @@ return [
             'icon'        => 'fas fa-fw fa-user-md',
         ],
         [
+            'text'        => 'Gallery',
+            'url'         => 'admin/gallery',
+            'icon'        => 'fa fa-camera',
+        ],
+        [
             'text'        => 'Notice',
             'url'         => 'admin/notice',
             'icon'        => 'fa fa-fw  fa-list-alt',

@@ -1,8 +1,10 @@
 @extends('adminlte::master')
 
 @section('adminlte_css')
-	<link rel="stylesheet" href="{{asset('css/cards/flipping-card.css')}}">
-	@stack('css')
+    <link rel="stylesheet" href="{{asset('css/cards/flipping-card.css')}}">
+{{--    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">--}}
+
+    @stack('css')
 	@yield('css')
 @stop
 
@@ -54,7 +56,7 @@
 @endif
 
 @section('body')
-	<div class="wrapper">
+	<div class="wrapper" id="app">
 		@if(config('adminlte.layout_topnav') || View::getSection('layout_topnav'))
 			<nav class="main-header navbar {{config('adminlte.classes_topnav_nav', 'navbar-expand-md')}} {{config('adminlte.topnav_color', 'navbar-white navbar-light')}}">
 				<div class="{{config('adminlte.classes_topnav_container', 'container')}}">
@@ -77,13 +79,13 @@
                         </span>
 						</a>
 					@endif
-					
+
 					<button class="navbar-toggler order-1" type="button" data-toggle="collapse"
 					        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
 					        aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					
+
 					<div class="collapse navbar-collapse order-3" id="navbarCollapse">
 						<ul class="nav navbar-nav">
 							@each('adminlte::partials.menu-item-top-nav', $adminlte->menu(), 'item')
@@ -171,18 +173,18 @@
 					</div>
 				</aside>
 			@endif
-			
+
 			<div class="content-wrapper">
 				@if(config('adminlte.layout_topnav') || View::getSection('layout_topnav'))
 					<div class="container">
 						@endif
-						
+
 						<div class="content-header">
 							<div class="{{config('adminlte.classes_content_header', 'container-fluid')}}">
 								@yield('content_header')
 							</div>
 						</div>
-						
+
 						<div class="content">
 							<div class="{{config('adminlte.classes_content', 'container-fluid')}}">
 								@yield('content')
@@ -192,30 +194,51 @@
 					</div>
 				@endif
 			</div>
-			
+
 			@hasSection('footer')
 				<footer class="main-footer">
-					
+
 					@yield('footer')
 				</footer>
 			@endif
-			
+
 			@if(config('adminlte.right_sidebar'))
 				<aside class="control-sidebar control-sidebar-{{config('adminlte.right_sidebar_theme')}}">
 					@yield('right-sidebar')
 				</aside>
 			@endif
-	
+
 	</div>
 @stop
 @section('adminlte_js')
 	<script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
 	@stack('js')
 	@yield('js')
 	<script src="{{ asset('vendor/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+	<script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
 	<script>
         $(document).ready(function () {
             bsCustomFileInput.init();
         });
+        $(function () {
+            // Summernote
+            $('.textarea').summernote({
+                    height: 300,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: true,                // set focus to editable area after initializing summernote
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
+                }
+            )
+        })
 	</script>
 @stop

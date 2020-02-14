@@ -14,7 +14,6 @@
 		</div>
 	</div>
 	
-	
 	@isset($notices)
 		<div class="card">
 			<div class="card-header">
@@ -30,6 +29,7 @@
 						<th>Description</th>
 						<th>Attachment</th>
 						<th>Created Date</th>
+						<th>Action</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -37,7 +37,7 @@
 						<tr>
 							<td> {{$loop->iteration}}</td>
 							<td> {{$notice->title}}</td>
-							<td> {{$notice->description}}</td>
+							<td> {!! $notice->description !!}</td>
 							@isset($notice->attachment)
 								<td><a href="{{ url( asset('storage/'.$notice->attachment))}}"
 								       target="_blank">{{$notice->title}}</a></td>
@@ -47,7 +47,46 @@
 								</td>
 							@endisset
 							<td> {{ date_format($notice->created_at, 'jS M, Y')	}}</td>
+					
+							<td>
+								<div class="btn-group btn-block">
+									<a href="{{ route('notice.edit',$notice)}}" class="btn btn-sm btn-outline-info">
+										Edit <span class="fas fa-pen ml-2"></span>
+									</a>
+									<button href="#" class="btn btn-sm btn-outline-danger" data-toggle="modal"
+									        data-target="#delete{{$loop->iteration}}">
+										Delete <span class="fas fa-trash ml-2"></span>
+									</button>
+								</div>
+							</td>
 						</tr>
+						<!-- Delete Confirmation Modal -->
+						<div class="modal fade" id="delete{{$loop->iteration}}" tabindex="-1" role="dialog"
+						     aria-labelledby="myModalLabel"
+						     aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header text-center">
+										<h4 class="modal-title w-100 font-weight-bold">Delete Confirmation</h4>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body mx-3">
+										Are you sure you want to delete this account?
+									</div>
+									<div class="modal-footer d-flex justify-content-center">
+										<form method="POST"
+										      action="{{ route('notice.destroy', [$notice]) }}">
+											@csrf
+											@method('delete')
+											<button class="btn btn-outline-danger">Delete</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Delete Confirmation Modal -->
 					@endforeach
 				</table>
 			</div>

@@ -5,16 +5,16 @@
 	<div class="container-fluid">
 		<div class="row py-lg-4 ">
 			<div class="col-lg-12">
+				@isset($about)
 				<h2>About Us</h2>
 				<div class="row ">
 					<div class=" col-lg-4 col-md-6 col-sm-12">
 						<img class="img-fluid " src="{{ asset('storage/'.$about->logo)}}" alt="No Image Found">
 					</div>
-					@isset($about)
 						<div class="col-lg-8 col-md-6 col-sm-12">
 							<h3>{{$about->name}}</h3>
 							<hr/>
-							<p>{{$about->description}}</p>
+							<p>{!! $about->description!!}</p>
 						</div>
 					@endisset
 				</div>

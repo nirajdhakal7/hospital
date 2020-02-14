@@ -30,6 +30,8 @@ Route::group(['middleware' => ['verified']], function () {
         Route::resource('about', 'AboutController');
         Route::resource('doctor', 'DoctorController');
         Route::resource('executive', 'ExecutiveController');
+        Route::resource('gallery', 'GalleryController');
+        Route::resource('{gallery}/image', 'AlbumController');
         Route::resource('notice', 'NoticeController');
         Route::resource('pages', 'PageController');
         Route::resource('service', 'ServiceController');

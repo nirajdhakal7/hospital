@@ -10,27 +10,31 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.19",
+        "axios": "^0.19.2",
         "boostrap": "^2.0.0",
         "cross-env": "^5.1",
+        "dropzone": "^5.5.1",
         "jquery": "^3.4.1",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
-        "mdbootstrap": "^4.8.11",
+        "mdbootstrap": "^4.12.0",
+        "propper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
+        "sass": "^1.25.0",
         "sass-loader": "^7.1.0",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.11.2",
+        "@fortawesome/fontawesome-free": "^5.12.1",
         "@jkryszto/mdb-for-laravel": "^1.0.0",
-        "bootstrap": "^4.3.1",
-      "datatables.net-bs4": "^1.10.20",
-      "icheck-bootstrap": "^3.0.1",
+        "bootstrap": "^4.4.1",
+        "ckeditor4": "^4.13.1",
+        "datatables.net-bs4": "^1.10.20",
+        "icheck-bootstrap": "^3.0.1",
         "node-waves": "^0.7.6",
-      "overlayscrollbars": "^1.10.0",
+        "overlayscrollbars": "^1.10.3",
         "popper": "^1.0.1",
-        "popper.js": "^1.16.0"
+        "popper.js": "^1.16.1",
+        "vue": "^2.6.11"
     }
 }
